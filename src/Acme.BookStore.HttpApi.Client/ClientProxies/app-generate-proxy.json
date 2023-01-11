@@ -1,0 +1,75 @@
+{
+  "modules": {
+    "app": {
+      "rootPath": "app",
+      "remoteServiceName": "Default",
+      "controllers": {
+        "Acme.BookStore.ImaginaryAppService": {
+          "controllerName": "Imaginary",
+          "controllerGroupName": "Imaginary",
+          "isRemoteService": true,
+          "isIntegrationService": false,
+          "apiVersion": null,
+          "type": "Acme.BookStore.ImaginaryAppService",
+          "interfaces": [
+            {
+              "type": "Acme.BookStore.IImaginaryAppService",
+              "name": "IImaginaryAppService",
+              "methods": [
+                {
+                  "name": "GetMyStuffAsync",
+                  "parametersOnMethod": [],
+                  "returnValue": {
+                    "type": "Volo.Abp.Application.Dtos.ListResultDto<System.Collections.Generic.KeyValuePair<System.Guid,System.String>>",
+                    "typeSimple": "Volo.Abp.Application.Dtos.ListResultDto<System.Collections.Generic.KeyValuePair<string,string>>"
+                  }
+                },
+                {
+                  "name": "DoMoreStuffAsync",
+                  "parametersOnMethod": [],
+                  "returnValue": {
+                    "type": "Volo.Abp.Identity.IdentityUserDto",
+                    "typeSimple": "Volo.Abp.Identity.IdentityUserDto"
+                  }
+                }
+              ]
+            }
+          ],
+          "actions": {
+            "DoMoreStuffAsync": {
+              "uniqueName": "DoMoreStuffAsync",
+              "name": "DoMoreStuffAsync",
+              "httpMethod": "POST",
+              "url": "api/app/imaginary/do-more-stuff",
+              "supportedVersions": [],
+              "parametersOnMethod": [],
+              "parameters": [],
+              "returnValue": {
+                "type": "Volo.Abp.Identity.IdentityUserDto",
+                "typeSimple": "Volo.Abp.Identity.IdentityUserDto"
+              },
+              "allowAnonymous": null,
+              "implementFrom": "Acme.BookStore.IDoesMoreStuff<Volo.Abp.Identity.IdentityUserDto>"
+            },
+            "GetMyStuffAsync": {
+              "uniqueName": "GetMyStuffAsync",
+              "name": "GetMyStuffAsync",
+              "httpMethod": "GET",
+              "url": "api/app/imaginary/my-stuff",
+              "supportedVersions": [],
+              "parametersOnMethod": [],
+              "parameters": [],
+              "returnValue": {
+                "type": "Volo.Abp.Application.Dtos.ListResultDto<System.Collections.Generic.KeyValuePair<System.Guid,System.String>>",
+                "typeSimple": "Volo.Abp.Application.Dtos.ListResultDto<System.Collections.Generic.KeyValuePair<string,string>>"
+              },
+              "allowAnonymous": null,
+              "implementFrom": "Acme.BookStore.IImaginaryAppService"
+            }
+          }
+        }
+      }
+    }
+  },
+  "types": {}
+}
